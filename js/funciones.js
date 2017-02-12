@@ -28,9 +28,21 @@ function mueveReloj(){
 
     muestroHora.innerHTML = "<h1>"+horaImprimible+"</h1>";
 }
+
 function recargaHora(){
   setInterval(mueveReloj,1000);
 }
 
+function musica(){
+	var audio = document.createElement("audio");
+	audio.src = "sonidos/shot.mp3";
+	return audio.play();
+}
+
+function cargaDocumento(){
+  recargaHora();
+  musica();
+}
+
 //aplicacion del evento
-window.addEventListener("load",recargaHora);
+window.addEventListener("load",cargaDocumento);
