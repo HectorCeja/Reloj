@@ -28,18 +28,34 @@ var muestroHora = document.getElementById('muestro-hora');
 }*/
 function mueveReloj(){
     momentoActual = new Date()
+
     var hora = momentoActual.getHours()
+    var horaConCero = (hora<=9)? "0"+hora : ""+hora;
+
     var minuto = momentoActual.getMinutes()
+    var minutoConCero = (minuto<=9)? "0"+minuto : ""+minuto;
+
     var segundo = momentoActual.getSeconds()
+    var segundoConCero = (segundo<=9)? "0"+segundo : ""+segundo;
 
-    horaImprimible = hora + " : " + minuto + " : " + segundo;
+    if(hora<=12){
+      horaImprimible = horaConCero + " : " + minutoConCero + " : " + segundoConCero+"AM";
+    }else {
+      for(var horaPM=1; horaPM<=12;horaPM++){
+        if( (horaConCero-horaPM ) == 12 ){
+          var horaPMConCero = (horaPM<=9)?"0"+horaPM : ""+horaPM;
+          horaImprimible = horaPMConCero + " : " + minutoConCero + " : " + segundoConCero+ " PM";
+        }
+      }
+    }
 
-    muestroHora.innerHTML = "<h1>"+horaImprimible+"</h1>";
+        muestroHora.innerHTML = "<h1>"+horaImprimible+"</h1>";
 
-    //setTimeout("mueveReloj()",1000);
+
+    }
+    function recargaHora(){
+      setInterval(mueveReloj,1000);
 }
 
 //aplicacion del evento
-window.addEventListener("load",function(){
-		iniciarReloj = setInterval(mueveReloj,1000);
-	});
+window.addEventListener("load",recargaHora);
