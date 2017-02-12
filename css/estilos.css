@@ -1,7 +1,6 @@
 #muestro-hora{
   background: black;
-  padding: 12px 0 12px 0;
-  margin: 0em 35em 0 35em;
+  margin: 0px 560px 0px 560px;
   border-radius: 5px;
   color: green;
   text-align: center;
@@ -13,9 +12,11 @@ body{
   background-attachment: fixed;
   background-size: cover;
 }
-
+#botonMusica{
+  width: 9%;
+}
 #marcianito{
-  margin: 23.8em 35em 0 35em;
+  margin: 380.8px 560px 0 560px;
   width: 9%;
 }
 div{
