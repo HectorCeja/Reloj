@@ -1,0 +1,27 @@
+#we{
+  background: orange;
+  font-size: 16px;
+  color: white;
+  padding: 16px 4px 0 3px;
+}
+
+.loquesea{
+  font-size:32px;
+}
+
+#sdas{
+  color: orange;
+  font-size: 16px;
+}
+.loquesea:hover{
+  font-size: 32px;
+  background: black;
+  color: white;
+}
+
+div{
+  background: white;
+}
+body{
+  background: black;
+}
